@@ -1,0 +1,12 @@
+<head><link href="/assets/styles/index.css" rel="stylesheet"></head>{% extends '../../common/pages/common.html' %}
+{% block styles %} {% endblock %}
+{% block content %}
+    <div class="left-area">
+        {% for news in list%}
+        <div>{{ news.title }}</div>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block script %} {% endblock %}
+
+<script type="text/javascript" src="/assets/scripts/vendor.bundle.js"></script><script type="text/javascript" src="/assets/scripts/index.bundle.js"></script><script type="text/javascript" src="/assets/scripts/common.bundle.js"></script>

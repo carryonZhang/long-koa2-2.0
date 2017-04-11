@@ -1,0 +1,11 @@
+{% extends '../../common/pages/common.html' %}
+{% block styles %} {% endblock %}
+{% block content %}
+    <div class="left-area">
+        {% for news in list%}
+        <div>{{ news.title }}</div>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block script %} {% endblock %}
+
