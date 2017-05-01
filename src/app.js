@@ -25,3 +25,4 @@ controller.getAllrouters(app, router);
 app.listen(8000, () => {
     console.log('Now it is listening at: ', 8000);
 });
+console.log('haha')
