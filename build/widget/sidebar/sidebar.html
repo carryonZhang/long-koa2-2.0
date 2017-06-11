@@ -1,8 +1,9 @@
-<aside class="sort">
-    <div v-bind:class="[{active: isActive}, option]" v-on:click="focus">最新赛讯</div>
-    <div v-bind:class="[{active: isActive}, option]" v-on:click="focus">DOTA神器</div>
-    <div v-bind:class="[{active: isActive}, option]" v-on:click="focus">找妹子</div>
-    <div v-bind:class="[{active: isActive}, option]" v-on:click="focus">视频集锦</div>
-    <div v-bind:class="[{active: isActive}, option]" v-on:click="focus">找人切磋</div>
-    <div v-bind:class="[{active: isActive}, option]" v-on:click="focus">大神现身</div>
+<aside v-bind:class="{active: isActive}" class="sort">
+    <div class="nav"><a href="#">最新赛讯</a></div>
+    <div class="nav"><a href="#">DOTA神器</a></div>
+    <div class="nav"><a href="#">找妹子</a></div>
+    <div class="nav"><a href="#">视频集锦</a></div>
+    <div class="nav"><a href="#">找人切磋</a></div>
+    <div class="nav"><a href="#">大神现身</a></div>
+    <div class="arrow" v-on:click="focus"></div>
 </aside>

@@ -4,23 +4,15 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
 var _indexController = require('./indexController');
 
 var _indexController2 = _interopRequireDefault(_indexController);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log('indexController', _indexController2.default); /**
-                                                            * Created by long-mac on 2017/4/5.
-                                                            */
+// console.log('indexController', index);
+// console.log('indexController中的属性', Object.keys(index))
 
-// const index = require('./indexController');
-
-console.log('indexController中的属性', (0, _keys2.default)(_indexController2.default));
 
 var controllerInit = {
     getAllrouters: function getAllrouters(app, router) {
@@ -32,5 +24,9 @@ var controllerInit = {
             // _.get('/home', index.home());
         }));
     }
-};
+}; /**
+    * Created by long-mac on 2017/4/5.
+    */
+
+// const index = require('./indexController');
 exports.default = controllerInit;

@@ -6,7 +6,7 @@ const path = require('path');
 
 function filepath(filepath){
     const filename = path.basename(filepath);
-    const folderPath =path.relative('./src',path.dirname(filepath).toString());
+    const folderPath = path.relative('./src',path.dirname(filepath).toString());
     const result = {
         filename: filename,
         folderPath: folderPath,

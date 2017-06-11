@@ -1,5 +1,10 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.app = undefined;
+
 var _koa = require('koa');
 
 var _koa2 = _interopRequireDefault(_koa);
@@ -30,10 +35,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Created by long-mac on 2017/4/5.
  */
-// const Koa = require('koa');
-// const router = require('koa-simple-router');
-// const controller = require('./controller/controllerInit');
-var app = new _koa2.default();
+var app = exports.app = new _koa2.default();
 app.use((0, _koaViews2.default)(_path2.default.join(__dirname, './views'), {
     map: {
         html: 'swig'
@@ -46,3 +48,5 @@ _controllerInit2.default.getAllrouters(app, _koaSimpleRouter2.default);
 app.listen(8000, function () {
     console.log('Now it is listening at: ', 8000);
 });
+
+console.log('app.js中的app对象', app);

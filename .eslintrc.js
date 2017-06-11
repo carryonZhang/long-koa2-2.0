@@ -24,7 +24,6 @@ module.exports = {
 		// "off"或者0，不启用这个规则
 		// "warn"或者1，出现问题会有警告
 		// "error"或者2，出现问题会报错
-
 		"no-cond-assign": 2, //条件语句的条件中不允许出现赋值运算符
 		"no-control-regex": 2, //正则表达式中不允许出现控制字符
 		"no-dupe-args": 2, //函数定义的时候不允许出现重复的参数
@@ -76,7 +75,7 @@ module.exports = {
 		"fun-call-spacing": 0, //函数调用时，函数名与()之间不能有空格
 		"no-ternary": 0, //不允许使用三目运算符
 		"no-trailing-spaces": 2, //一行最后不允许有空格
-		"no-underscore-dangle": 2, //不允许标识符以下划线开头
+		// "no-underscore-dangle": 2, //不允许标识符以下划线开头
 		"no-extra-parens": 0, //不允许出现多余的括号
 		"one-var": 0, //强制变量声明放在一起
 		"operator-assignment": 0, //赋值运算符的风格

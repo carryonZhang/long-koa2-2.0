@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <title>{{ page_title }}</title>
     {% block styles %} {% endblock %}
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
 </head>
 <body>
-<div class="container" >
+<div class="container clearfix" >
     {% block content %}
     {% endblock %}
-    {% include "../../../widget/sidebar/sidebar.html" %}
     {% block script %} {% endblock %}
 </div>
+{% include "../../../widget/sidebar/sidebar.html" %}
 </body>
 </html>

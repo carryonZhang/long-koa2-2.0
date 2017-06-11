@@ -1,4 +1,7 @@
 /**
+ * Created by shaolong on 2017/6/8.
+ */
+/**
  * Created by long-mac on 2017/4/9.
  */
 /**
@@ -9,25 +12,32 @@ var conf = require('./webpack.conf');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+
 var options = {
 	output: {
 		path: path.join(__dirname, '../build'),
-		publicPath: '/',
-		filename: 'assets/scripts/[name].bundle.js'
+		publicPath: '/assets/',
+		filename: 'assets/scripts/[name].[chunkhash:5].bundle.js'
 	},
 	plugins: [
 		new webpack.ProvidePlugin({
 			Vue: ['vue/dist/vue.esm.js', 'default']
 		}),
 		new webpack.DefinePlugin({
-			'process.env': {
-				NODE_ENV: '"dev"'
-			}
+		    'process.env': {
+		        NODE_ENV: '"prod"'
+		    }
+		}),
+		new uglifyJsPlugin({
+			beautify: false,
+			mangle: {screw_ie8: true},
+			compress: {screw_ie8: true, warnings: false},
+			comments: false
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',
-			filename: 'assets/scripts/[name].bundle.js',
-			// minChunks: Infinity
+			filename: 'assets/scripts/[name].[chunkhash:5].bundle.js',
 		}),
 		new HtmlWebpackPlugin({
 			template: './web/views/common/pages/common.html',
@@ -38,7 +48,7 @@ var options = {
 			template: './web/views/index/pages/index.js',
 			filename: './views/index/pages/index.html',
 			inject: false,
-			chunks: ['vendor', 'common', 'index']
+			chunks: ['vendor','common','index']
 		}),
 		new HtmlWebpackPlugin({
 			template: './web/views/news/pages/newsdetail.html',
@@ -52,11 +62,6 @@ var options = {
 			inject: false
 		}),
 		new HtmlWebpackPlugin({
-			template: './web/widget/activity/activity.html',
-			filename: './widget/activity/activity.html',
-			inject: false
-		}),
-		new HtmlWebpackPlugin({
 			template: './web/views/error/pages/404.html',
 			filename: './views/error/pages/404.html',
 			inject: false
@@ -66,10 +71,8 @@ var options = {
 			filename: './views/error/pages/500.html',
 			inject: false
 		}),
-		new ExtractTextPlugin("assets/styles/[name].css"),
+		new ExtractTextPlugin("assets/styles/[name].[hash:5].css"),
 	],
 }
-var sourcemap = process.env.NODE_ENV === 'dev' ? 'cheap-eval-source-map' : 'source-map';
-options.devtool = sourcemap;
 var _options = Object.assign(options, conf.dev)
 module.exports = _options;

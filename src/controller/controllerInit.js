@@ -5,8 +5,8 @@
 // const index = require('./indexController');
 import index from './indexController';
 
-console.log('indexController', index);
-console.log('indexController中的属性', Object.keys(index))
+// console.log('indexController', index);
+// console.log('indexController中的属性', Object.keys(index))
 
 
 const controllerInit = {
