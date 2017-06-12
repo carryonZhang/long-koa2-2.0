@@ -8,6 +8,7 @@ import views from 'koa-views';
 import serve from 'koa-static';
 import path from 'path';
 import controller from './controller/controllerInit';
+import errorHandler from './controller/errorHandler';
 
 export const app = new Koa();
 app.use(views(path.join(__dirname, './views'), {
@@ -16,6 +17,8 @@ app.use(views(path.join(__dirname, './views'), {
     },
 }));
 app.use(serve(path.join(__dirname, '../build')));
+
+errorHandler.error(app);
 
 controller.getAllrouters(app, router);
 

@@ -17,7 +17,7 @@ gulp.task('default', ['es6'], function() {
             console.log(result);
             return gulp.src(item.toString())
                 .pipe(babel({
-                    presets: ['es2015', 'stage-3'],
+                    presets: ['env', 'stage-3'],
                     plugins: ['transform-runtime']
                 }))
                 .pipe(gulp.dest('./build/' + result.folderPath));
@@ -36,7 +36,7 @@ gulp.task('es6', [], function() {
                     //     debug: true
                     // }))
                         .pipe(babel({
-                            presets: ['es2015', 'stage-3'],
+                            presets: ['env', 'stage-3'],
                             plugins: ['transform-runtime'],
                         }))
                         // .pipe(sourcemap.write(__dirname + './maps'))

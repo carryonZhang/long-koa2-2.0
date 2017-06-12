@@ -17,7 +17,7 @@ var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var options = {
 	output: {
 		path: path.join(__dirname, '../build'),
-		publicPath: '/assets/',
+		publicPath: '/',
 		filename: 'assets/scripts/[name].[chunkhash:5].bundle.js'
 	},
 	plugins: [
@@ -74,5 +74,5 @@ var options = {
 		new ExtractTextPlugin("assets/styles/[name].[hash:5].css"),
 	],
 }
-var _options = Object.assign(options, conf.dev)
+var _options = Object.assign(options, conf.prod)
 module.exports = _options;

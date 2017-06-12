@@ -9,7 +9,7 @@ import '../../images/ig2.jpeg';
 import '../../images/ig3.jpeg';
 console.log(Vue);
 
-// 由于html是用模板引擎循环出来的，所以Vue的绑定只能绑定静态的html代码，之后循环出来的html代码Vue无法绑定
+// 由于html是用模板引擎循环出来的，所以Vue只能绑定静态的html代码，之后循环出来的html代码Vue无法绑定
 
 // const newsitem = new Vue({
 //     el: '.news',

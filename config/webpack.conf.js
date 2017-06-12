@@ -54,12 +54,21 @@ var _entris = {
 var _devRules = undersore.clone(_module.rules);
 var _prodRules = undersore.clone(_module.rules);
 _devRules.push({
-	test: /\.(png|jpeg|jpg|gif|eot|woff|woff2|ttf|svg)$/,
-	loader: 'file-loader?name=assets/images/[name].[ext]'
+	test: /\.(png|jpe?g|gif|eot|woff|woff2|ttf|svg)$/,
+	use: 'file-loader?name=assets/images/[name].[ext]'
 });
 _prodRules.push({
-	test: /\.(png|jpeg|jpg|gif|eot|woff|woff2|ttf|svg)$/,
-	loader: 'file-loader?name=assets/images/[name].[hash:5].[ext]'
+	test: /\.(png|jpe?g|gif|eot|woff|woff2|ttf|svg)$/,
+	use: 'file-loader?name=assets/images/[name].[hash:5].[ext]'
+	// loaders: [
+	// 	'file-loader?name=assets/images/[name].[hash:5].[ext]',
+	// 	{
+	// 		loader: 'image-webpack-loader',
+	// 		query: {
+	// 			optimizationLevel: 7
+	// 		}
+	// 	}
+	// ]
 });
 
 // var sourcemap = process.env.NODE_ENV === 'dev' ? 'cheap-eval-source-map' : 'source-map';

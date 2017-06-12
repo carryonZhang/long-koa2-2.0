@@ -21,7 +21,6 @@ var controllerInit = {
             _.get('/index', _indexController2.default.index());
             _.get('/index.html', _indexController2.default.index());
             _.get('/index/index', _indexController2.default.index());
-            // _.get('/home', index.home());
         }));
     }
 }; /**

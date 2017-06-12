@@ -16,7 +16,6 @@ const controllerInit = {
             _.get('/index', index.index());
             _.get('/index.html', index.index());
             _.get('/index/index', index.index());
-            // _.get('/home', index.home());
         }));
     },
 };

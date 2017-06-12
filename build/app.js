@@ -29,19 +29,25 @@ var _controllerInit = require('./controller/controllerInit');
 
 var _controllerInit2 = _interopRequireDefault(_controllerInit);
 
+var _errorHandler = require('./controller/errorHandler');
+
+var _errorHandler2 = _interopRequireDefault(_errorHandler);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* eslint-disable fun-call-spacing */
+var app = exports.app = new _koa2.default(); /* eslint-disable fun-call-spacing */
 /**
  * Created by long-mac on 2017/4/5.
  */
-var app = exports.app = new _koa2.default();
+
 app.use((0, _koaViews2.default)(_path2.default.join(__dirname, './views'), {
     map: {
         html: 'swig'
     }
 }));
 app.use((0, _koaStatic2.default)(_path2.default.join(__dirname, '../build')));
+
+_errorHandler2.default.error(app);
 
 _controllerInit2.default.getAllrouters(app, _koaSimpleRouter2.default);
 
