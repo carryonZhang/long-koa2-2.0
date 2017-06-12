@@ -59,19 +59,19 @@ _devRules.push({
 });
 _prodRules.push({
 	test: /\.(png|jpe?g|gif|eot|woff|woff2|ttf|svg)$/,
-	use: 'file-loader?name=assets/images/[name].[hash:5].[ext]'
-	// loaders: [
-	// 	'file-loader?name=assets/images/[name].[hash:5].[ext]',
-	// 	{
-	// 		loader: 'image-webpack-loader',
-	// 		query: {
-	// 			optimizationLevel: 7
-	// 		}
-	// 	}
-	// ]
+	// use: 'file-loader?name=assets/images/[name].[hash:5].[ext]'
+	loaders: [
+		'file-loader?name=assets/images/[name].[hash:5].[ext]',
+		{
+			loader: 'image-webpack-loader',
+			query: {
+				optimizationLevel: 7
+			}
+		}
+	]
 });
 
-// var sourcemap = process.env.NODE_ENV === 'dev' ? 'cheap-eval-source-map' : 'source-map';
+var sourcemap = process.env.NODE_ENV === 'dev' ? 'cheap-eval-source-map' : 'source-map';
 
 // console.log('sourcemap', sourcemap)
 
@@ -82,6 +82,7 @@ var webpackConfig = {
 			rules: _devRules
 		},
 		resolve: _resolve,
+		devtool: sourcemap
 	},
 	prod: {
 		entry: _entris,
@@ -89,6 +90,7 @@ var webpackConfig = {
 			rules: _prodRules
 		},
 		resolve: _resolve,
+		devtool: sourcemap
 	}
 };
 module.exports = webpackConfig;

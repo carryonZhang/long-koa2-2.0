@@ -69,7 +69,6 @@ var options = {
 		new ExtractTextPlugin("assets/styles/[name].css"),
 	],
 }
-var sourcemap = process.env.NODE_ENV === 'dev' ? 'cheap-eval-source-map' : 'source-map';
-options.devtool = sourcemap;
+
 var _options = Object.assign(options, conf.dev)
 module.exports = _options;
