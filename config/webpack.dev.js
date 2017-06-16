@@ -41,12 +41,6 @@ var options = {
 			chunks: ['vendor', 'common', 'index']
 		}),
 		new HtmlWebpackPlugin({
-			template: './web/views/news/pages/newsdetail.html',
-			filename: './views/news/pages/newsdetail.html',
-			inject: 'body',
-			chunks: ['vendor', 'newsdetail']
-		}),
-		new HtmlWebpackPlugin({
 			template: './web/widget/sidebar/sidebar.html',
 			filename: './widget/sidebar/sidebar.html',
 			inject: false

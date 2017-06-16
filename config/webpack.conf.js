@@ -13,7 +13,6 @@ var entryPath = path.resolve(__dirname, '../web/views');
 var _entris = {
 		common: path.join(entryPath, 'common/common.entry.js'),
 		index: path.join(entryPath, 'index/index.entry.js'),
-		newsdetail: path.join(entryPath, 'news/newsdetail.entry.js')
 	},
 	_module = {
 		rules: [{
@@ -59,7 +58,6 @@ _devRules.push({
 });
 _prodRules.push({
 	test: /\.(png|jpe?g|gif|eot|woff|woff2|ttf|svg)$/,
-	// use: 'file-loader?name=assets/images/[name].[hash:5].[ext]'
 	loaders: [
 		'file-loader?name=assets/images/[name].[hash:5].[ext]',
 		{
@@ -73,7 +71,6 @@ _prodRules.push({
 
 var sourcemap = process.env.NODE_ENV === 'dev' ? 'cheap-eval-source-map' : 'source-map';
 
-// console.log('sourcemap', sourcemap)
 
 var webpackConfig = {
 	dev: {
@@ -95,44 +92,3 @@ var webpackConfig = {
 };
 module.exports = webpackConfig;
 
-// module.exports = {
-//     context: path.resolve(__dirname, './src'),
-//     entry: {
-//         app: './app.js',
-//     },
-//     // target: 'node',
-//     // node: {
-//     //     __filename: true,
-//     //     __dirname: true,
-//     // },
-//     module: {
-//         rules: [
-//             {
-//                 test: /\.js$/,
-//                 exclude: /node_modules/,
-//                 loader: 'babel-loader',
-//                 // use: [{
-//                 //     loader: 'babel-loader',
-//                 //     options: { presets: ['es2015'] },
-//                 // }],
-//             },
-//
-//             // Loaders for other file types can go here
-//         ],
-//     },
-//     output: {
-//         path: path.resolve(__dirname, './build'),
-//         filename: '[name].bundle.js',
-//     },
-//     resolve: {
-//         modules: [path.resolve(__dirname, './src'), 'node_modules'],
-//         // extensions: []
-//         // alias: {
-//         //
-//         // },
-//     },
-//     // devtool: "cheap-eval-source-map",
-//     plugins: [
-//         new webpack.HotModuleReplacementPlugin(),
-//     ],
-// };

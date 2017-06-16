@@ -95,24 +95,8 @@ a, a:hover {
     }
 }
 
-@media screen and (max-width: 599px) {
-
-}
-
 @media screen and (min-width: 600px) {
     .container {
         padding: 20px 20px 0 20px;
     }
-}
-
-@media screen and (min-width: 900px) {
-
-}
-
-@media screen and (min-width: 1200px) {
-
-}
-
-@media screen and (min-width: 1800px) {
-
 }
